@@ -1,4 +1,4 @@
-<?php $this->load->view('Gunung/header') ?>
+<?php $this->load->view('Gunung/admin/header') ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
   <php echo from_open('Gunung/create'); ?>

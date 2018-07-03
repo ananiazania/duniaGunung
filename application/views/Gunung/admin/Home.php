@@ -1,3 +1,4 @@
+<?php $this->load->view('Gunung/admin/header') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1>Daftag Gunung Tertinggi </h1>
+  <h1>Daftar Gunung Tertinggi </h1>
   <p>Di Indonesia</p>
 </div>
 
@@ -20,8 +21,8 @@
   <div class="row">
     <div class="col-sm-4">
       <h3>Cartenzs Pyramid</h3>
-      <p><img src="/assets/Gambar/filename.jpg"></p>
-      <td><a href="<?=site_url()?>/Gunung/DaftarGunung/<?php echo $key->id ?>"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+      <p><img src="/assets/Gambar/Puncak-Jayawijaya-Papua1.jpg"></p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
     <div class="col-sm-4">
       <h3>Puncak Gunung Mandala</h3>
