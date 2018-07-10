@@ -1,4 +1,4 @@
-<?php $this->load->view('Gunung/header') ?>
+<?php $this->load->view('Gunung/admin/header') ?>
 
 <section id="contact">
   <div class="container">

@@ -30,25 +30,16 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('index.php/pegawai/Create')?>">
-                   <i class="fas fa-info"></i> Tambah Data <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item active">
             <a class="nav-link" href="<?= base_url('index.php/pegawai/contact') ?>">
-               <i class="fas fa-users"></i> Data User <span class="sr-only">(current)</span>
+               <i class="fas fa-users"></i> Profile <span class="sr-only">(current)</span>
             </a>
            </li>
            <li class="nav-item active">
            <a class="nav-link" href="<?= base_url('index.php/pegawai/contact') ?>">
-              <i class="fas fa-users"></i> Provil <span class="sr-only">(current)</span>
+              <i class="fas fa-users"></i> Tentang <span class="sr-only">(current)</span>
            </a>
           </li>
-          <li class="nav-item active">
-          <a class="nav-link" href="<?= base_url('index.php/pegawai/contact') ?>">
-             <i class="fas fa-users"></i> Data Komentar <span class="sr-only">(current)</span>
-          </a>
-         </li>
+
         </ul>
     </div>
   </nav>
