@@ -10,7 +10,7 @@
     </div>
 
     <div class="from-group">
-      <lable for="">Harga Tiket</lable>
+      <lable for="">Lokasi</lable>
       <input type="text" class="from-control" id="tiket" name="tiket" placeholder="tiket">
     </div
 
@@ -19,19 +19,9 @@
       <input type="text" class="from-control" id="tinggi" name="tinggi" placeholder="tinggi">
     </div>
 
-    <div class="from-group">
-      <lable for="">Kota</lable>
-      <input type="text" class="from-control" id="kota" name="kota" placeholder="kota">
-    </div>
-
-    <div class="from-group">
-      <lable for="">Provinsi</lable>
-      <input type="text" class="from-control" id="provinsi" name="provinsi" placeholder="provinsi">
-    </div>
-
     <div class="form-group">
     <label for=""> Foto </label>
-  <input type="file" name="userfile" placeholder="foto">
+  <input type="file" name="userfile" placeholder="gambar">
   </div>
 
 

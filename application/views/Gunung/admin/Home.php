@@ -1,43 +1,38 @@
 <?php $this->load->view('Gunung/admin/header'); ?>
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading"> Daftar Gunung Tertinggi</div>
+<div class="panel-body">
+<table class="table table-striped">
 
-<section id="contact">
-  <div class="container">
-    <div class="well well-sm">
-      <h3>
-        Daftar Gunung
-    </div>
+<thead>
+         <tr>
+         <!-- <th>No</th> -->
+         <th>Nama</th>
+         <th>Lokasi</th>
+         <th>Tinggi</th>
+         <th>Foto</th>
+         <th>Update</th>
+         <th>Delete</th>
+         </tr>
+        </thead>
+        <tbody>
+  <?php foreach($daftar as $key) { ?>
 
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>no</th>
-              <th>Nama</th>
-              <th>Tinggi</th>
-              <th>Lokasi</th>
-              <th>Status</th>
-              <th>Perubahan</th>
-              <th>foto</th>
-            </tr>
-          </thead>
-          </thead>
-          <?php foreach ($tampil as $key) {?>
-          <tr>
-            <td><?= $key->no?></td>
-            <td><?= $key->nama?></td>
-            <td><?= $key->tinggi?></td>
-            <td><?= $key->lokasi?></td>
-            <td><?= $key->status?></td>
-            <td><?= $key->perubahan?></td>
-            <td><?= $key->alamat ?></td>
-            <td><img src="<?php echo base_url('assets/Gambar').''.$key->foto?>" alt="" width="100px" height= "100px" srcset=""></td>
-          </tr>
-          <?php } ?>
+    <tr>
+      <!-- <td><?php echo $a; ?></td> -->
+      <td><?php echo $key->nama_gunung ?></td>
+      <td><?php echo $key->lokasi ?></td>
+      <td><?php echo $key->tinggi ?></td>
+      <td><img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset=""></td>
 
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
+      <td><a href="<?=site_url()?>/Gunung/Update/<?php echo $key->id ?>"><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><a href="<?=site_url()?>/Gunung/Delete/<?php echo $key->id ?>"><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+
+    </tr>
+  </tbody>
+  <!-- <?php $a++; } ?> -->
+</table>
+</div>
+</div>
+</div>

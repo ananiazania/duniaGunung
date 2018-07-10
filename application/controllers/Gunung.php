@@ -13,14 +13,14 @@ class Gunung extends CI_Controller
  }
   public function index()
   {
-    $this->load->view('Gunung/admin/Home');
+    $this->load->view('Gunung/user/Home');
       //$this->load->view('Home');
   }
 
   public function tampil()
  {
    $data['daftar'] = $this->Gunung_Model->getGunung();
-   $this->load->view('Gunung/DaftarGunung', $data);
+   $this->load->view('Gunung/admin/Home', $data);
  }
 
   public function create()

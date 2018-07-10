@@ -9,26 +9,26 @@ class Gunung_Model extends CI_Model
 
   public function insertGunung()
   {
-    $object = array('nama' => $this->post('nama'),
+    $object = array('nama_gunung' => $this->post('nama_gunung'),
+  'lokasi' => $this->post('lokasi'),
   'tinggi' => $this->post('tinggi'),
-  'kota' => $this->post('kota'),
-  'provinsi' => $this->post('provinsi'),);
+  'gambar' => $this->post('gambar'),);
   $this->db->insert('Gunung', $object);
   }
 
   public function getGunung()
     {
       //ini nama tabel artinya select * from tabel pegawai pada db
-        $query= $this->db->get('wisata');
-        return $query->result();
+        $query= $this->db->get('gunung');
+        return $qu00ery->result();
     }
 
   public function updateById($id)
   {
-    $data = array('nama' => $this->input->post('nama'),
+    $data = array('nama_gunung' => $this->input->post('nama_gunung'),
+    'lokasi' => $this->input->post('lokasi'),
     'tinggi' => $this->input->post('tinggi'),
-    'kota' => $this->input->post('kota'),
-    'provinsi' => $this->input->post('provinsi'),);
+    'gambar' => $this->input->post('gambar'),);
     $this->db->where('id', $id);
     $this->db->update('Gunung', $data);
   }
