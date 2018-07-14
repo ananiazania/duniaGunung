@@ -13,7 +13,7 @@ class Gunung extends CI_Controller
  }
   public function index()
   {
-    $this->load->view('Gunung/admin/Home');
+    $this->load->view('gunung/user/Home');
       //$this->load->view('Home');
   }
 
