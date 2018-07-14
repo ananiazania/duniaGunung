@@ -34,28 +34,28 @@
     </div>
   <br>
     <div class="col-sm-4">
-      <h3>Punak Gunung Trikola</h3>
+      <h3>Puncak Gunung Trikola</h3>
       <p><img src="<?= base_url('/assets/Gambar/home.3.jpg') ?>" alt="" width="250px" height= "250px" srcset=""></p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <button type="submit" class="btn btn-primary">datail</button>
+      <button type="submit" class="btn btn-primary">Datail</button>
     </div>
     <br>
     <div class="col-sm-4">
-      <h3>Punak Gunung Trikola</h3>
+      <h3>Puncak Gunung Trikola</h3>
       <p><img src="<?= base_url('/assets/Gambar/home.4.jpg') ?>" alt="" width="250px" height= "250px" srcset=""></p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       <button type="submit" class="btn btn-primary">Detail</button>
     </div>
     <br>
     <div class="col-sm-4">
-      <h3>Punak Yamin</h3>
+      <h3>Puncak Yamin</h3>
       <p><img src="<?= base_url('/assets/Gambar/home.5.jpg') ?>" alt="" width="250px" height= "250px" srcset=""></p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <button type="submit" class="btn btn-primary">detailt</button>
+      <button type="submit" class="btn btn-primary">Detailt</button>
     </div>
     <br>
     <div class="col-sm-4">
-      <h3>Punak Kerinci</h3>
+      <h3>Puncak Kerinci</h3>
       <p><img src="<?= base_url('/assets/Gambar/home.6.jpg') ?>" alt="" width="250px" height= "250px" srcset=""></p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       <button type="submit" class="btn btn-primary">Detail</button>

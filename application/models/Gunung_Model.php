@@ -20,7 +20,7 @@ class Gunung_Model extends CI_Model
     {
       //ini nama tabel artinya select * from tabel pegawai pada db
         $query= $this->db->get('gunung');
-        return $qu00ery->result();
+        return $query->result();
     }
 
   public function updateById($id)
