@@ -32,5 +32,22 @@ class Gunung_Model extends CI_Model
     $this->db->where('id', $id);
     $this->db->update('Gunung', $data);
   }
+
+  public function login($username,$password)
+        {
+            $this->db->select('*');
+            $this->db->from('tbuser');
+            $this->db->where('username',$username);
+            $this->db->where('password',$password);
+            $query = $this->db->get();
+            if($query->num_rows()==1){
+                return $query->result();
+            }else{
+                return false;
+            }
+
+        }
+
+
 }
 ?>

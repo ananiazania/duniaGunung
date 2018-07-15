@@ -17,7 +17,10 @@
 <!-- navbar -->
 <div>
 <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #8cff66; margin-bottom:30px;">
-    <a class="navbar-brand" href="#"><i class="fas fa-badge"></i> Gunung Tertinggi di Indonesian </a>
+    <a class="navbar-brand" href="<?= site_url('Admin/Home_Apik') ?>"><i class="fas fa-badge">
+      <img src="<?= base_url()?>./assets/gambar/mountain_logo.png" height="45px" width="50px" alt="" srcset="">
+
+    </i> Gunung Tertinggi di Indonesian </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +29,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
           <a class="nav-link" href="<?= site_url('Admin/Home_admin') ?>">
-             <i class="fas fa-home"></i></i> Home <span class="sr-only">(current)</span>
+             <i class="fab fa-accusoft"></i> Data Gunung <span class="sr-only">(current)</span>
           </a>
          </li>
             <li class="nav-item active">
@@ -34,6 +37,7 @@
                <i class="fas fa-users"></i></i> Data User <span class="sr-only">(current)</span>
             </a>
            </li>
+
           <li class="nav-item active">
           <a class="nav-link" href="<?= site_url('Admin/DataKomentar_admin') ?>">
              <i class="fas fa-comments"></i> Data Komentar <span class="sr-only">(current)</span>
@@ -61,7 +65,7 @@
     </div>
 </div> -->
 
-  <script type="text/javascript" src="<?= base_url('ass/js/jquery-3.1.1.min.js') ?>"></script>
+  <script type="text/javascript" src="<?= base_url('ass/js/jquery-3.2.1.min.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('ass/js/tether.min.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('ass/js/bootstrap.min.js') ?>"></script>
 <script type="text/javascript" src="<?= base_url('ass/js/mdb.min.js') ?>"></script>

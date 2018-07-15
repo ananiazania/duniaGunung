@@ -1,31 +1,40 @@
-<?php $this->load->view('Gunung/admin/header') ?>
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<?php $this->load->view('Gunung/admin/header'); ?>
+  <!-- Content -->
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
 
-  <php echo from_open('Gunung/create'); ?>
-    <legend>Tambah Data Gunung Tertinggi Di Indonesia</legend>
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" style="background-color: 4dff4d;">
+                            <i class="fas fa-users"></i> Tambah Daftar Gunung
+                        </div>
+                        <div class="card-body">
+                        <?php echo form_open_multipart('Admin/createUser');?>
+                        <?php echo validation_errors(); ?>
+                        <?php  if(isset($error)){echo $error;} ?>
+                        <div class="form-group">
+                            <h5>Nama Gunung</h5>
+                            <input type="text" name="nama_gunung" class="form-control" id="nama_gunung" placeholder="Nama Gunung">
+                            <h5>Lokasi</h5>
+                            <input type="text" name="lokasi" class="form-control" id="lokasi" placeholder="Lokasi">
+                            <h5>Tinggi</h5>
+                            <input type="text" name="tinggi" class="form-control" id="tinggi" placeholder="Tinggi">
 
-    <div class="from-group">
-      <lable for="">Nama Gunung</lable>
-      <input type="text" class="from-control" id="nama" name="nama" placeholder="nama">
-    </div>
+                            <h5>Foto</h5>
+                            <input type="file" name="userfile" class="form-control" id="foto" >
 
-    <div class="from-group">
-      <lable for="">Lokasi</lable>
-      <input type="text" class="from-control" id="tiket" name="tiket" placeholder="tiket">
-    </div
+                        </div>
+                            <button type="button" class="btn btn-success">Success</button>
+                        </div>
+                            <br>
 
-    <div class="from-group">
-      <lable for="">Tinggi</lable>
-      <input type="text" class="from-control" id="tinggi" name="tinggi" placeholder="tinggi">
-    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="form-group">
-    <label for=""> Foto </label>
-  <input type="file" name="userfile" placeholder="gambar">
+            <div class="col-md-2"></div>
+        </div>
   </div>
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-  </form>
-  <?php  echo form_close();?>
