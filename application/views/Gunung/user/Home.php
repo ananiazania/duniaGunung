@@ -18,6 +18,20 @@
 </div>
 
 <div class="container">
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#WJSlider" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Kembali</span>
+    </a>
+    <a class="right carousel-control" href="#WJSlider" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Lanjut</span>
+    </a>
+  </div>
+</div>
+
   <div class="row">
     <div class="col-sm-4">
       <h3>Cartenzs Pyramid</h3>
