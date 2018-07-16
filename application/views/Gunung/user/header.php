@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Pegawai</title>
+<title>Gunung Cantik</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,30 +16,37 @@
 
 <!-- navbar -->
 <div>
-<nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #ff6666; margin-bottom:30px;">
-    <a class="navbar-brand" href="#"><i class="fas fa-badge"></i> CRUD CI BOOTSTRAP </a>
+<nav class="navbar navbar-expand-lg sticky-top navbar-light" style="background-color: #8cff66; margin-bottom:30px;">
+    <a class="navbar-brand" href="#"><i class="fas fa-badge"></i> Gunung Tertinggi di Indonesian </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          <a class="nav-link" href="<?= site_url('User/Home_User') ?>">
+             <i class="fas fa-home"></i></i> Home <span class="sr-only">(current)</span>
+          </a>
+         </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('index.php/pegawai') ?>">
-                   <i class="fas fa-home"></i> Home <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="<?= base_url('index.php/pegawai/Create')?>">
-                   <i class="fas fa-info"></i> Tentang <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="<?= base_url('index.php/pegawai/contact') ?>">
-               <i class="fas fa-users"></i> Provile <span class="sr-only">(current)</span>
+            <a class="nav-link" href="<?= site_url('User/Profile_user')  ?>">
+               <i class="fas fa-users"></i></i> Profil Saya <span class="sr-only">(current)</span>
             </a>
-        </li>
+           </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="<?= site_url('User/Tentang') ?>">
+             <i class="fas fa-comments"></i> Tentang <span class="sr-only">(current)</span>
+          </a>
+         </li>
         </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <!-- nama cont/function -->
+            <a href="<?php echo site_url('Admin/Profile_admin') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
+          </form>
+          <form class="form-inline mt-2 mt-md-0">
+              <a href="<?= site_url('User/Logout_user') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Log Out</a>
+          </form>
     </div>
   </nav>
 </div>

@@ -1,4 +1,3 @@
-
 <?php $this->load->view('Gunung/user/header') ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,8 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1> Profil Saya </h1>
+  <h1>Daftar Gunung Tertinggi </h1>
+  <p>Di Indonesia</p>
 </div>
 
     <div class="container">

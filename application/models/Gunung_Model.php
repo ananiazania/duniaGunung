@@ -9,11 +9,14 @@ class Gunung_Model extends CI_Model
 
   public function insertGunung()
   {
-    $object = array('nama_gunung' => $this->post('nama_gunung'),
-  'lokasi' => $this->post('lokasi'),
-  'tinggi' => $this->post('tinggi'),
-  'gambar' => $this->post('gambar'),);
-  $this->db->insert('Gunung', $object);
+    $object = array('nama_gunung' =>
+    $this->post('nama_gunung'),
+    'lokasi' => $this->post('lokasi'),
+    'tinggi' => $this->post('tinggi'),
+    'status' => $this->post('status'),
+    'gambar' => $this->post('gambar'),
+  );
+    $this->db->insert('Gunung', $object);
   }
 
   public function getGunung()
