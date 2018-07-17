@@ -13,7 +13,6 @@ class Gunung extends CI_Controller
  }
   public function index()
   {
-<<<<<<< HEAD
     $this->Data_gunung();
       //$this->load->view('Home');
   }
@@ -21,11 +20,8 @@ class Gunung extends CI_Controller
   public function Data_gunung()
   {
     $data['tampil'] = $this->Gunung_Model->getGunung();
-    $this->load->view('Gunung/admin/Home', $data);
+    $this->load->view('Gunung/admin/Home_Apik', $data);
 
-=======
-    $this->load->view('gunung/user/Home');
->>>>>>> 53e5538e45ffe420063339397fe526e49ba80cde
       //$this->load->view('Home');
   }
 

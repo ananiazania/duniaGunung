@@ -12,8 +12,8 @@ class Admin extends CI_Controller
 
   public function index()
   {
-      $this->load->view('Gunung/admin/Home_Apik');
-   //$this->Home_admin();
+      //$this->load->view('Gunung/admin/Home_Apik');
+   $this->LogIn_Admin();
   }
 
   public function Home_Apik()
@@ -54,9 +54,9 @@ class Admin extends CI_Controller
       $this->load->view('Gunung/admin/Profile_admin');
   }
 
-  public function Tambah_Gun_admin()
+  public function Tambah_Gunung()
   {
-      $this->load->view('Gunung/admin/Tambah_Gunung_View');
+      $this->load->view('Gunung/admin/Daftar_Gunung_View');
   }
 
   public function Logout_admin()
@@ -66,11 +66,47 @@ class Admin extends CI_Controller
 
   public function LogIn_admin()
   {
-      $this->load->view('Gunung/admin/Home');
+    $this->load->view('Gunung/admin/LogIn_Admin');
+
   }
+  public function cekDb()
+  {
+      $data = array('username' => $this->input->post('username', TRUE),
+                    'password' => $this->input->post('password', TRUE));
+      $this->load->model('Admin_Model');
+      $hasil = $this->Admin_Model->GetUser($data);
+      if ($hasil->num_rows() == 1) {
+        foreach ($hasil->result() as $sess) {
+          $sess_data['logged_in'] = 'Sudah Login';
+          $sess_data['id_user'] = $sess->id_user;
+          $sess_data['username'] = $sess->username;
+          $sess_data['password'] = $sess->password;
+          $sess_data['level'] = $sess->level;
+          // $this->session->set_userdata('logged_in',$sess_array);
+
+          $this->session->set_userdata($sess_data);
+        }
+        if ($this->session->userdata('level') == 'admin') {
+          redirect('Gunung');
+        }
+        elseif ($this->session->userdata('level') == 'user') {
+          // code...
+        }
+      }
+      else {
+        echo "<script>alert('Gagal Login: Cek Ussername, Password');history.go(-1);</script>";
+      }
+   }
+
+
   public function Bantuan()
   {
       $this->load->view('Gunung/admin/Bantuan');
+  }
+
+  public function UpdateUser()
+  {
+      $this->load->view('Gunung/admin/Update_User');
   }
   public function createUser()
   {
@@ -95,76 +131,88 @@ class Admin extends CI_Controller
           }
   }
 
+  public function createGunung()
+  {
+      $this->load->helper('url','form');
+      $this->load->library('form_validation');
+      $this->form_validation->set_rules('nama_gunung','Nama Gunung','trim|required');
+      $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
+      $this->form_validation->set_rules('tinggi','Tinggi','trim|required');
+      $this->form_validation->set_rules('status','Status','trim|required');
+      $this->load->model('Admin_Model');
 
-  public function Login()
-    {
-        $this->load->library('form_validation');
+      if($this->form_validation->run()==FALSE)
+        {
+          $this->load->view('Gunung/admin/Daftar_Gunung_View');
+        }
+      else
+      {
+            //masuk folder gambar,type file
+            $config['upload_path'] = './assets/Gambar/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size']  = 8000000;
+            $config['max_width']  = 1024;
+            $config['max_height']  = 768;
 
-         $this->form_validation->set_rules('username','username','trim|required');
-         //disini ada cek db dia akan manggil function cek db di bawah
-        $this->form_validation->set_rules('password','password','trim|required|callback_cekDb');
-
-        if ($this->form_validation->run() == FALSE) {
-             //jika tidak sama maka tetap di tampilan login
-            $this->load->view('Gunung/Admin/LogIn_Admin');
-        } else {
-             //jika benar maka masuk dashboard atau tampilan setelah login
-            redirect(base_url('Admin/Profile_admin'),'refresh');
+    	       $this->load->library('upload',$config);
+             if ( ! $this->upload->do_upload('userfile'))
+              {
+                // echo $this->upload->display_errors();
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('Gunung/admin/Daftar_Gunung_View',$error);
+                print_r($error);
+              }
+            else
+              {
+                $this->Admin_Model->insertGunung();
+                $this->load->view('Gunung/admin/Daftar_Gunung_Sukses');
+              }
         }
     }
 
-
-    public function cekDb($password)
-    {
-        $this->load->model('Admin_Model');
-
-        $username = $this->input->post('username');
-        $result = $this->Admin_Model->login($username,$password);
-
-        print_r($result);
-
-        if($result){
-            $sess_array = array();
-            foreach ($result as $row => $res) {
-                 echo $res->username;
-                $sess_array = array(
-                    'id_user'=>$res->id_user,
-                    'username'=> $res->username,
-                    'password'=> $res->password,
-                    'level' => $res->level
-                );
-                $this->session->set_userdata('logged_in',$sess_array);
-            }
-            return true;
-        }else{
-            $this->form_validation->set_message('cekDb',"Login Gagal Username dan Password Tidak Valid");
-            return false;
-        }
-     }
-
      public function Update($id)
- {
-   $this->form_validation->set_rules('username','Username','trim|required');
-   $this->form_validation->set_rules('jeniskelamin','JenisKelamin','trim|required');
-   $this->form_validation->set_rules('alamat','Alamat','trim|required');
-   $this->form_validation->set_rules('email','Email','trim|required');
-   $this->form_validation->set_rules('password','Password','trim|required');
-   $this->form_validation->set_rules('level','Level','trim|required');
-   $this->load->model('Admin_Model');
+     {
+       $this->form_validation->set_rules('username','Username','trim|required');
+       $this->form_validation->set_rules('jeniskelamin','JenisKelamin','trim|required');
+       $this->form_validation->set_rules('alamat','Alamat','trim|required');
+       $this->form_validation->set_rules('email','Email','trim|required');
+       $this->form_validation->set_rules('password','Password','trim|required');
+       $this->form_validation->set_rules('level','Level','trim|required');
+       $this->load->model('Admin_Model');
 
-     if ( ! $this->upload->do_upload())
-     {
-       $error = array('error' => $this->upload->display_errors());
-               $this->load->view('Gunung/Admin/Tambah_User', $error);
+         if ( ! $this->upload->do_upload())
+          {
+              $error = array('error' => $this->upload->display_errors());
+              $this->load->view('Gunung/Admin/Tambah_User', $error);
+          }
+         else
+           {
+             $this->Admin_Model->Updateuser($id);
+             $this->load->view('Makan/');
+           }
+           $data['tbuser']=$this->Admin_Model->getUserAll($id);
      }
-     else
+
+     public function UpdateGunungadmin($id)
      {
-       $this->Admin_Model->UpdateByid($id);
-       $this->load->view('Makan/');
+       $this->form_validation->set_rules('nama_gunung','NamaGunung','trim|required');
+       $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
+       $this->form_validation->set_rules('tinggi','Tinggi','trim|required');
+       $this->form_validation->set_rules('status','Email','trim|required');
+       $this->load->model('Admin_Model');
+
+         if ( ! $this->upload->do_upload(userfile))
+          {
+              $error = array('error' => $this->upload->display_errors());
+              $this->load->view('Gunung/Admin/Update_Gunung', $error);
+          }
+         else
+           {
+             $this->Admin_Model->updategunung($id);
+             $this->load->view('Gunung/admin/Home');
+           }
+           $data['gunung']=$this->Admin_Model->getgunungAll($id);
      }
-   }
-   $data['barang']=$this->Admin_Model->getmakan($id);
- }
 
 
 } ?>

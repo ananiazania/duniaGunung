@@ -11,7 +11,7 @@
                             <i class="fas fa-users"></i> Tambah Daftar Gunung
                         </div>
                         <div class="card-body">
-                        <?php echo form_open_multipart('Admin/createUser');?>
+                        <?php echo form_open_multipart('Admin/createGunung');?>
                         <?php echo validation_errors(); ?>
                         <?php  if(isset($error)){echo $error;} ?>
                         <div class="form-group">
@@ -21,12 +21,14 @@
                             <input type="text" name="lokasi" class="form-control" id="lokasi" placeholder="Lokasi">
                             <h5>Tinggi</h5>
                             <input type="text" name="tinggi" class="form-control" id="tinggi" placeholder="Tinggi">
+                            <h5>Status</h5>
+                            <input type="text" name="status" class="form-control" id="status" placeholder="Status">
 
                             <h5>Foto</h5>
                             <input type="file" name="userfile" class="form-control" id="foto" >
 
                         </div>
-                            <button type="button" class="btn btn-success">Success</button>
+                            <button type="submit" class="btn btn-success">Success</button>
                         </div>
                             <br>
 

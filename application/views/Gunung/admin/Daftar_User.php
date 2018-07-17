@@ -4,7 +4,7 @@
   <div class="container">
     <div class="well well-sm">
       <h3>
-        Daftar Komentar
+        Daftar User
     </div>
 
   <div class="row">
@@ -32,9 +32,8 @@
             <td><?= $key->level ?></td>
             <td>
               <div class="btn-group" role="group" aria-label="">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#"><i class="fas fa-edit"></i></button>
-                  <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-
+                  <a href="<?= site_url('Admin/UpdateUser') ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                  <a href="<?= site_url('Admin/UpdateUser') ?>" class="btn btn-danger"><i class="fas fa-trash""></i></a>
               </div>
             </td>
           </tr>

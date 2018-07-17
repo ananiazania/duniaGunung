@@ -26,7 +26,7 @@
                         <img src="<?= base_url()?>./assets/gambar/mountainAdd.png" height="250px" width="350px" alt="" srcset="">
                         <br> <br>
                         <div class="text-center">
-                                        <a class="nav-link" href="<?= site_url('Admin/Tambah_Gunung_admin') ?>">
+                                        <a class="nav-link" href="<?= site_url('Admin/Tambah_Gunung') ?>">
                                         <button type="button" class="btn btn-success btn-lg" >
                                             <i class="fas fa-plus-square"></i> Tambah Data Gunung
                                         </button>

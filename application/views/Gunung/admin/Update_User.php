@@ -16,7 +16,7 @@
                         <?php  if(isset($error)){echo $error;} ?>
                         <div class="form-group">
                             <h5>Username</h5>
-                            <input type="text" name="username" value="<?php echo $tbuser[0]->usename?>" class="form-control" id="username" placeholder="Username">
+                            <input type="text" name="username" class="form-control" id="username" value="<?php echo $tbuser[0]->username?>" placeholder="username"><br>
                             <h5>Jenis Kelamin</h5>
                                 <select name="jeniskelamin" id="jeniskelamin" value="<?php echo $tbuser[0]->jeniskelamin?>" class="form-control" style="height: 40px; width: 190px;">
                                     <option value="admin">Laki-Laki</option>

@@ -10,7 +10,7 @@
                     </h1>
                 </div>
                 <div class="col-md-6 justify-content-md-center">
-                    <form action="<?php echo base_url('Admin/LogIn_Admin') ?>" method="post">
+                    <form action="<?php echo base_url('index.php/Admin/CekDB') ?>" method="post">
                         <div class="form-group">
                             <label class="white" for="username">Username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="username" aria-describedby="helpId">
