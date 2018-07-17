@@ -20,7 +20,8 @@
                             <input type="password" name="password" id="password" class="form-control" placeholder="password" aria-describedby="helpId">
                         </div>
                         <button type="submit" name="btn" id="" class="btn btn-success btn-lg btn-block">Login</button>
-                        <!-- <button type="" name="btn" id="" class="btn btn-info btn-lg btn-block">Sign Up</button> -->
+                        <br> Sudah punya akun? Silahkan Daftar <br><br>
+                        <a href="<?= site_url('User/Daftar') ?>"button type="" name="btn" id="" class="btn btn-info btn-lg btn-block"> Sign Up </a>
                     </form>
 
                 </div>

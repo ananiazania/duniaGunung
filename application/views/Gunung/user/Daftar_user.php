@@ -35,7 +35,7 @@
                         <?php echo form_close(); ?>
                     </div>
                         <br>
-
+                        <input type="button" value="Kembali" onclick="history.back(-1)" />
                     </div>
                 </div>
             </div>
