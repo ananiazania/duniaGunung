@@ -90,7 +90,7 @@ class Admin extends CI_Controller
           redirect('Gunung');
         }
         elseif ($this->session->userdata('level') == 'user') {
-          // code...
+          redirect('User');
         }
       }
       else {
@@ -198,7 +198,7 @@ class Admin extends CI_Controller
        $this->form_validation->set_rules('nama_gunung','NamaGunung','trim|required');
        $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
        $this->form_validation->set_rules('tinggi','Tinggi','trim|required');
-       $this->form_validation->set_rules('status','Email','trim|required');
+       $this->form_validation->set_rules('status','Status','trim|required');
        $this->load->model('Admin_Model');
 
          if ( ! $this->upload->do_upload(userfile))
