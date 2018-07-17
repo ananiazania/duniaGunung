@@ -89,12 +89,14 @@ class Admin extends CI_Controller
         if ($this->session->userdata('level') == 'admin') {
           redirect('Gunung');
         }
-        elseif ($this->session->userdata('level') == 'user') {
-          redirect('User');
+        elseif ($this->session->userdata('level') == 'user')
+        {
+          redirect('User'); // code...
         }
       }
       else {
         echo "<script>alert('Gagal Login: Cek Ussername, Password');history.go(-1);</script>";
+        redirect('User');
       }
    }
 

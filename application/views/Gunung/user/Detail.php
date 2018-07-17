@@ -31,10 +31,12 @@
       </thead>
       <?php foreach ($tampil as $key){?>
           <tr>
-            <td><?= $key->nama_gunung?></td>
-            <td><?= $key->lokasi?></td>
-            <td><?= $key->tinggi?></td>
-            <td><?= $key->status?></td>
+            <td><?= $key->username?></td>
+            <td><?= $key->jeniskelamin?></td>
+            <td><?= $key->alamat?></td>
+            <td><?= $key->email?></td>
+            <td><?= $key->password?></td>
+            
             <td><img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset=""></td>
             <td><a href="<?= base_url('index.php/User/DaftarGunung') ?>" class="btn btn-primary">Lihat Detail </font></a></td>
                       </tr>
