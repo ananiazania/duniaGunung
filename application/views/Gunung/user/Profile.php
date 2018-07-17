@@ -22,11 +22,11 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <table border="0" class="table table-hover">
       <thead>
-      <td> Nama          : </td>
-      <td> Jenis Kelamin : </td>
-      <td> Alamat        : </td>
-      <td> Email         : </td>
-      <td> Password      :  </td>
+      <tr><td> Nama          : </td></tr>
+      <tr><td> Jenis Kelamin : </td></tr>
+      <tr><td> Alamat        : </td></tr>
+      <tr><td> Email         : </td></tr>
+      <tr><td> Password      :  </td></tr>
 
       </thead>
       <?php foreach ($tampil as $key){?>

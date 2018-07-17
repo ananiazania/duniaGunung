@@ -11,7 +11,7 @@ class User extends CI_Controller
     public function index()
     {
       //  $this->load->view('Gunung/user/LogIn_user');
-      $this->load->view('Gunung/user/Home');
+      $this->load->view('Gunung/user/Login_User');
     }
 
 
@@ -45,10 +45,10 @@ class User extends CI_Controller
       $this->load->view('Gunung/user/Profile');
   }
 
-  public function Logout_user()
-  {
-      $this->load->view('Gunung/user/Login_User');
-  }
+  // public function Logout_user()
+  // {
+  //     $this->load->view('Gunung/user/Login_User');
+  // }
 
   public function Daftar()
   {
@@ -69,9 +69,9 @@ class User extends CI_Controller
   {
       $this->load->library('form_validation');
 
-       $this->form_validation->set_rules('username','username','trim|required');
+       $this->form_validation->set_rules('username','Username','trim|required');
        //disini ada cek db dia akan manggil function cek db di bawah
-      $this->form_validation->set_rules('password','password','trim|required|callback_cekDb');
+      $this->form_validation->set_rules('password','Password','trim|required|callback_cekDb');
 
       if ($this->form_validation->run() == FALSE)
       {
@@ -85,6 +85,21 @@ class User extends CI_Controller
        }
      }
 
+
+ public function cekLogin()
+ {
+   $this->load->library('form_validation');
+   $this->load->model('Usermodel');
+   $this->form_validation->set_rules('username', 'Username', 'trim|required');
+   $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_cekDb');
+   if ($this->form_validation->run() ==  FALSE) {
+     $this->load->view('Gunung/user/Login_User');
+   }else{
+     redirect(base_url('Gunung/user/Home'),'refresh');
+   }
+ }
+
+
            public function Daftargunungtertinggi()
           {
             $this->load->model('Gunung_Model');
@@ -97,7 +112,7 @@ class User extends CI_Controller
                 $this->load->model('Usermodel');
 
                 $username = $this->input->post('username');
-                $result = $this->users_model->login($username,$password);
+                $result = $this->Usermodel->login($username,$password);
 
                 print_r($result);
 
@@ -119,6 +134,8 @@ class User extends CI_Controller
                     return false;
                 }
               }
+
+
 
             public function createUser()
             {
