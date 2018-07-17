@@ -10,8 +10,8 @@ class User extends CI_Controller
 
     public function index()
     {
-      //  $this->load->view('Gunung/user/Login_user');
-      $this->load->view('Gunung/user/Login_User');
+      //  $this->load->view('Gunung/user/LogIn_user');
+      $this->DaftarGunung();
     }
 
 
@@ -63,6 +63,11 @@ class User extends CI_Controller
   public function Masuk()
   {
       $this->load->view('Gunung/user/Login_User');
+  }
+
+  public function Logout_user()
+  {
+      $this->load->view('Gunung/admin/LogIn_Admin');
   }
 
   public function Login()
@@ -139,27 +144,34 @@ class User extends CI_Controller
 
             public function createUser()
             {
-            $this->load->helper('url','form');
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('username','Username','trim|required');
-            $this->form_validation->set_rules('jeniskelamin','JenisKelamin','trim|required');
-            $this->form_validation->set_rules('alamat','Alamat','trim|required');
-            $this->form_validation->set_rules('email','Email','trim|required');
-            $this->form_validation->set_rules('password','Password','trim|required');
+                $this->load->helper('url','form');
+                $this->load->library('form_validation');
+                $this->form_validation->set_rules('username','Username','trim|required');
+                $this->form_validation->set_rules('jeniskelamin','JenisKelamin','trim|required');
+                $this->form_validation->set_rules('alamat','Alamat','trim|required');
+                $this->form_validation->set_rules('email','Email','trim|required');
+                $this->form_validation->set_rules('password','Password','trim|required');
 
-            $this->load->model('Usermodel');
+                $this->load->model('Usermodel');
 
-                  if($this->form_validation->run()==FALSE)
-                  {
-                      $this->load->view('Gunung/user/Daftar_user');
-                  }
-                  else
-                  {
-                      $this->Usermodel->insertUser();
-                      $this->load->view('Gunung/user/daftarusersukses');
-                  }
+                      if($this->form_validation->run()==FALSE)
+                      {
+                          $this->load->view('Gunung/user/Daftar_user');
+                      }
+                      else
+                      {
+                          $this->Usermodel->insertUser();
+                          $this->load->view('Gunung/user/daftarusersukses');
+                      }
 
 
-    }
+            }
+
+            public function logout()
+              {
+                  $this->session->unset_userdata('logged_in');
+                  $this->session->sess_destroy();
+                  redirect(base_url('Users'),'refresh');
+              }
 }
 ?>

@@ -89,12 +89,14 @@ class Admin extends CI_Controller
         if ($this->session->userdata('level') == 'admin') {
           redirect('Gunung');
         }
-        elseif ($this->session->userdata('level') == 'user') {
-          redirect('Gunung'); // code...
+        elseif ($this->session->userdata('level') == 'user')
+        {
+          redirect('User'); // code...
         }
       }
       else {
         echo "<script>alert('Gagal Login: Cek Ussername, Password');history.go(-1);</script>";
+        redirect('User');
       }
    }
 
@@ -198,7 +200,7 @@ class Admin extends CI_Controller
        $this->form_validation->set_rules('nama_gunung','NamaGunung','trim|required');
        $this->form_validation->set_rules('lokasi','Lokasi','trim|required');
        $this->form_validation->set_rules('tinggi','Tinggi','trim|required');
-       $this->form_validation->set_rules('status','Email','trim|required');
+       $this->form_validation->set_rules('status','Status','trim|required');
        $this->load->model('Admin_Model');
 
          if ( ! $this->upload->do_upload(userfile))
