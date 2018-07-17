@@ -20,14 +20,14 @@
     <div class="container">
 
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <table class="table table-hover">
+    <table border="0" class="table table-hover">
       <thead>
-        <th>Nama</th>
-        <th>Lokasi</th>
-        <th> Tinggi </th>
-        <th> Status </th>
-        <th> Gambar </th>
-        <th>Aksi</th>
+      <td> Nama          : </td>
+      <td> Jenis Kelamin : </td>
+      <td> Alamat        : </td>
+      <td> Email         : </td>
+      <td> Password      :  </td>
+
       </thead>
       <?php foreach ($tampil as $key){?>
           <tr>

@@ -76,21 +76,49 @@ class User extends CI_Controller
       if ($this->form_validation->run() == FALSE)
       {
            //jika tidak sama maka tetap di tampilan login
-          $this->load->view('Gunung/User/Login_User');
+          $this->load->view('Gunung/user/Login_User');
       }
       else
        {
            //jika benar maka masuk dashboard atau tampilan setelah login
-          redirect(base_url('Gunung/User/Home'),'refresh');
+          redirect(base_url('Gunung/user/Home'),'refresh');
        }
      }
 
-       public function Daftargunungtertinggi()
-      {
-        $this->load->model('Gunung_Model');
-        $data['tampil'] = $this->Gunung_Model->getGunung();
-        $this->load->view('Gunung/user/DaftarGunung',$data);
-      }
+           public function Daftargunungtertinggi()
+          {
+            $this->load->model('Gunung_Model');
+            $data['tampil'] = $this->Gunung_Model->getGunung();
+            $this->load->view('Gunung/user/DaftarGunung',$data);
+          }
+
+          public function cekDb($password)
+              {
+                $this->load->model('Usermodel');
+
+                $username = $this->input->post('username');
+                $result = $this->users_model->login($username,$password);
+
+                print_r($result);
+
+                if($result){
+                    $sess_array = array();
+                    foreach ($result as $row => $res) {
+                         echo $res->id_user;
+                        $sess_array = array(
+                            'id_user'=>$res->id_user,
+                             'username'=> $res->username,
+                             'password'=> $res->password,
+
+                        );
+                        $this->session->set_userdata('logged_in',$sess_array);
+                    }
+                    return true;
+                }else{
+                    $this->form_validation->set_message('cekDb',"Login Gagal Username dan Password Tidak Valid");
+                    return false;
+                }
+              }
 
             public function createUser()
             {
