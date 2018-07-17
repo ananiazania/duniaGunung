@@ -90,7 +90,7 @@ class Admin extends CI_Controller
           redirect('Gunung');
         }
         elseif ($this->session->userdata('level') == 'user') {
-          // code...
+          redirect('Gunung'); // code...
         }
       }
       else {

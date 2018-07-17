@@ -10,7 +10,7 @@ class User extends CI_Controller
 
     public function index()
     {
-      //  $this->load->view('Gunung/user/LogIn_user');
+      //  $this->load->view('Gunung/user/Login_user');
       $this->load->view('Gunung/user/Login_User');
     }
 

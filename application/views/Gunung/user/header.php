@@ -42,7 +42,7 @@
         </ul>
           <form class="form-inline mt-2 mt-md-0">
             <!-- nama cont/function -->
-            <a href="<?php echo site_url('Admin/Profile_admin') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
+            <a href="<?php echo site_url('User/Profile') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
           </form>
           <form class="form-inline mt-2 mt-md-0">
               <a href="<?php echo site_url('User/Login_User') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Log Out</a>
