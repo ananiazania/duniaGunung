@@ -7,14 +7,14 @@
               <div class="col-md-12">
                   <div class="card">
                       <div class="card-header" style="background-color: 4dff4d;">
-                          <i class="fas fa-users"></i> Tambah User
+                          <i class="fas fa-users"></i> Selamat
                       </div>
                       <div class="card-body">
                         <?php
 
-                            echo "sukses Simpan Data";
+                            echo "Edit Data Anda Telah Sukses";
 
-                            echo anchor('Admin/TambahUser_admin', 'Masukkan Data Lagi');
+                            echo anchor('Admin/DaftarUser_admin', 'Kembali Ke Data User');
                         ?>
 
 
