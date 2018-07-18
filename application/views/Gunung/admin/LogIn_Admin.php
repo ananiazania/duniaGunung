@@ -20,7 +20,7 @@
                             <input type="password" name="password" id="password" class="form-control" placeholder="password" aria-describedby="helpId">
                         </div>
                         <button type="submit" name="btn" id="" class="btn btn-success btn-lg btn-block">Login</button>
-                        <button site_url('User/Daftar') type="submit" name="btn" id="" class="btn btn-success btn-lg btn-block">Sig In Up</button>
+                        <a  href="<?= site_url('User/Daftar') ?>"  class="btn  btn-success  btn-lg btn-block">Sigin Up </a>
                         <!-- <button type="" name="btn" id="" class="btn btn-info btn-lg btn-block">Sign Up</button> -->
                     </form>
 
