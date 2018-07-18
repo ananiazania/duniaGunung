@@ -84,7 +84,7 @@ class Admin extends CI_Controller
           $sess_data['level'] = $sess->level;
           // $this->session->set_userdata('logged_in',$sess_array);
 
-          $this->session->set_userdata($sess_data);
+          $this->session->set_userdata($sess_data);                                                      
         }
         if ($this->session->userdata('level') == 'admin') {
           redirect('Gunung');
