@@ -118,5 +118,13 @@ public function updateuser($id)
           return $query;
         }
 
+        public function delete($id)
+	{
+		$this->db->where('id_user', $id);
+		return $this->db->delete('tbuser');
+
+		//$this->db->delete->where('No', $id);
+	}
+
 }
 ?>

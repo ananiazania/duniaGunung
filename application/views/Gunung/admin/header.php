@@ -47,15 +47,7 @@
           <form class="form-inline mt-2 mt-md-0">
             <!-- nama cont/function -->
             <a href="<?php echo site_url('Admin/Profile_admin') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
-          </form>
-          <form class="form-inline mt-2 mt-md-0">
-              <li class="list-group-item">
-                            <a href="<?= site_url('Admin/Logout_admin') ?>">
-                            <i class="fas fa-sign-out-alt"></i>
-                                Log Out
-                            </a>
-                        </li>
-
+            <a  href="<?= site_url('Admin/Logout_admin') ?>"  class="btn  btn-success my-2 my-sm-0 ml-2">Log Out</a>
           </form>
     </div>
   </nav>

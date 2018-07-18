@@ -33,7 +33,7 @@
             <td>
               <div class="btn-group" role="group" aria-label="">
                   <a href="<?= site_url('Admin/UpdateUser') ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                  <a href="<?= site_url('Admin/UpdateUser') ?>" class="btn btn-danger"><i class="fas fa-trash""></i></a>
+                  <a href="<?= site_url('Admin/delete') ?>" class="btn btn-danger"><i class="fas fa-trash""></i></a>
               </div>
             </td>
           </tr>
