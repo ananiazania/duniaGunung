@@ -1,4 +1,4 @@
-<?php $this->load->view('Gunung/User/header') ?>
+<?php $this->load->view('Gunung/Admin/header_all_admin') ?>
 <body>
     <div class="content">
         <div class="container">
