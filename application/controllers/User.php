@@ -65,11 +65,6 @@ class User extends CI_Controller
       $this->load->view('Gunung/user/Login_User');
   }
 
-  public function Logout_user()
-  {
-      $this->load->view('Gunung/admin/LogIn_Admin');
-  }
-
   public function Login()
   {
       $this->load->library('form_validation');
@@ -167,11 +162,6 @@ class User extends CI_Controller
 
             }
 
-            public function logout()
-              {
-                  $this->session->unset_userdata('logged_in');
-                  $this->session->sess_destroy();
-                  redirect(base_url('Users'),'refresh');
-              }
+          
 }
 ?>

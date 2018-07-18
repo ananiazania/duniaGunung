@@ -61,12 +61,15 @@ class Admin extends CI_Controller
 
   public function Logout_admin()
   {
-      $this->load->view('Gunung/admin/LogIn_Admin');
+      $this->session->unset_userdata('logged_in');
+        $this->session->sess_destroy();
+        redirect(base_url('index.php/Admin'),'refresh');
   }
 
   public function LogIn_admin()
   {
     $this->load->view('Gunung/admin/LogIn_Admin');
+
 
   }
   public function cekDb()
