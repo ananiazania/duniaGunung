@@ -61,20 +61,20 @@ class Admin extends CI_Controller
 
   public function Logout_admin()
   {
+      $this->load->view('Gunung/admin/LogIn_Admin');
       $this->session->unset_userdata('logged_in');
         $this->session->sess_destroy();
-        redirect(base_url('index.php/Admin'),'refresh');
+        redirect(base_url('Admin'),'refresh');
   }
 
   public function LogIn_admin()
   {
     $this->load->view('Gunung/admin/LogIn_Admin');
-
+    
 
   }
   public function cekDb()
   {
-      $this->load->library('form_validation');
       $data = array('username' => $this->input->post('username', TRUE),
                     'password' => $this->input->post('password', TRUE));
       $this->load->model('Admin_Model');
@@ -100,7 +100,7 @@ class Admin extends CI_Controller
       }
       else {
         echo "<script>alert('Gagal Login: Cek Ussername, Password');history.go(-1);</script>";
-        //redirect('User');
+        redirect('User');
       }
    }
 
@@ -220,11 +220,5 @@ class Admin extends CI_Controller
            $data['gunung']=$this->Admin_Model->getgunungAll($id);
      }
 
-     public function deleteUser($id)
-    {
-		$this->Admin_Model->deleteUser($id);
-		echo "sukses hapus";
-        //$this->load->view('pegawai/hapus_pegawai_sukses');
-    }
 
 } ?>

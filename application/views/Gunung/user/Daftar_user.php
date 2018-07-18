@@ -1,4 +1,4 @@
-<?php $this->load->view('Gunung/User/header') ?>
+<?php $this->load->view('Gunung/Admin/header_all_admin') ?>
 <body>
   <!-- Content -->
 <div class="container-fluid">
@@ -35,7 +35,7 @@
                         <?php echo form_close(); ?>
                     </div>
                         <br>
-
+                        <input type="button" value="Kembali" onclick="history.back(-1)" />
                     </div>
                 </div>
             </div>
