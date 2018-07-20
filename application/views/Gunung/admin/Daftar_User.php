@@ -1,21 +1,12 @@
 <?php $this->load->view('Gunung/admin/header') ?>
 
 <section id="contact">
-
-
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/JSGRID/jsgrid/jsgrid.min.css" />
-        <link type="text/css" rel="stylesheet" href="<?php echo base_url()?>assets/JSGRID/jsgrid/jsgrid-theme.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="<?php echo base_url()?>assets/JSGRID/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>assets/JSGRID/jsgrid/jsgrid.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>assets/JSGRID/custom/grid.js"></script>
-
-
+  <div class="container">
     <div class="well well-sm">
       <h3>
         Daftar User
     </div>
-<!--
+
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="table-responsive">
@@ -31,12 +22,8 @@
               <th>Pilihan</th>
             </tr>
           </thead>
--->
-
-<!--
-        <?php foreach ($tampil as $key){?>
-        -->
-<!--
+          <?php foreach ($tampil as $key){?>
+          <tr>
             <td><?= $key->username?></td>
             <td><?= $key->jeniskelamin?></td>
             <td><?= $key->alamat ?></td>
@@ -50,18 +37,10 @@
               </div>
             </td>
           </tr>
-        -->
-        <!--
           <?php } ?>
-        -->
-        <!--
+
         </table>
       </div>
     </div>
   </div>
 </section>
--->
-<div class="container">
-    <div id="jsGrid">
-    </div>
-      </div>
