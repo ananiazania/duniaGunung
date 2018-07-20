@@ -252,7 +252,6 @@ class Admin extends CI_Controller
     {
        $this->Admin_Model->deleteGunung($id);
         $this->load->view('Gunung/admin/Delete_Gunung_Sukses');
-      }
+    }
 
-
-?>
+    }
