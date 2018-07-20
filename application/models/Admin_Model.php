@@ -39,6 +39,19 @@ class Admin_Model extends CI_Model
               return $query->result();
           }
 
+          public function getUpdateUser($Id)
+          {
+            $this->db->where('id_user',$Id);
+            $query = $this->db->get('tbuser');
+            return $query->result();
+          }
+
+          public function GetUser($data)
+        {
+          $query = $this->db->get_where('tbuser', $data);
+          return $query;
+        }
+
         public function getUserAll()
           {
             //ini nama tabel artinya select * from tabel pegawai pada db
@@ -77,17 +90,17 @@ class Admin_Model extends CI_Model
         );
           $this->db->insert('gunung',$object);
         }
-public function updateuser($id)
+        public function updateuser($id)
       {
         # code...
         $data = array
         ('username' => $this->input->post('username'),
         'JenisKelamin' => $this->input->post('jeniskelamin'),
         'email' => $this->input->post('email'),
-        'jpassword' => $this->input->post('password'),
+        'password' => $this->input->post('password'),
         'level' => $this->input->post('level'),
           );
-            $this->db->where('id', $id);
+            $this->db->where('id_user', $id);
             $this->db->update('tbuser', $data);
       }
 
@@ -98,33 +111,41 @@ public function updateuser($id)
           return $query->result();
         }
 
+        public function getUpdateGunung($Id)
+          {
+            $this->db->where('id_gunung',$Id);
+            $query = $this->db->get('gunung');
+            return $query->result();
+          }
       public function updategunung($id)
             {
               # code...
-              $data = array
-              ('nama_gunung' => $this->input->post('nama_gunung'),
-              'lokasi' => $this->input->post('lokasi'),
-              'tinggi' => $this->input->post('tinggi'),
-              'status' => $this->input->post('status'),
-              'gambar' => $this->upload->data('userfile'),
+              $data = array(
+                'nama_gunung' => $this->input->post('nama_gunung'),
+                'lokasi' => $this->input->post('lokasi'),
+                'tinggi' => $this->input->post('tinggi'),
+                'status' => $this->input->post('status'),
+                'gambar' => $this->upload->data('file_name'),
                 );
-                  $this->db->where('id', $id);
+                  $this->db->where('id_gunung', $id);
                   $this->db->update('gunung', $data);
             }
 
-        public function GetUser($data)
+        public function deleteUser($id)
+      	{
+      		$this->db->where('id_user', $id);
+      		return $this->db->delete('tbuser');
+
+      		//$this->db->delete->where('No', $id);
+      	}
+
+        public function deleteGunung($id)
         {
-          $query = $this->db->get_where('tbuser', $data);
-          return $query;
+          $this->db->where('id_gunung', $id);
+          return $this->db->delete('gunung');
+
+          //$this->db->delete->where('No', $id);
         }
-
-        public function delete($id)
-	{
-		$this->db->where('id_user', $id);
-		return $this->db->delete('tbuser');
-
-		//$this->db->delete->where('No', $id);
-	}
 
 }
 ?>
