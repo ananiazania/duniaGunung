@@ -14,7 +14,7 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1> Profil Saya </h1>
+  <h1> Detail Gunung </h1>
 </div>
 
     <div class="container">
@@ -22,28 +22,42 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <table border="0" class="table table-hover">
       <thead>
-      <tr><td> Nama          : </td></tr>
-      <tr><td> Jenis Kelamin : </td></tr>
-      <tr><td> Alamat        : </td></tr>
-      <tr><td> Email         : </td></tr>
-      <tr><td> Password      :  </td></tr>
+      <tr><td> Nama          : <!--</td></tr>-->
+      <?php foreach ($tampil as $key){?>
+        <!--<tr>  <td>--> <?= $key->nama_gunung?></td> </tr><?php } ?>
+      <tr><td> Lokasi :
+        <?php foreach ($tampil as $key){?>
+          <!--<tr>  <td>--> <?= $key->lokasi?></td> </tr><?php } ?>
+      <tr><td> Tinggi        :
+        <?php foreach ($tampil as $key){?>
+          <!--<tr>  <td>--> <?= $key->tinggi?></td> </tr><?php } ?>
+      <tr><td> Status        :   <?php foreach ($tampil as $key){?>
+          <!--<tr>  <td>--> <?= $key->status?></td> </tr><?php } ?>
+      <tr><td> Gambar    :
+          <img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset="">
+          </td></tr>
 
+      </td></tr>
+<!--
       </thead>
       <?php foreach ($tampil as $key){?>
-          <tr>
-            <td><?= $key->username?></td>
-            <td><?= $key->jeniskelamin?></td>
-            <td><?= $key->alamat?></td>
-            <td><?= $key->email?></td>
-            <td><?= $key->password?></td>
-            
-            <td><img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset=""></td>
-            <td><a href="<?= base_url('index.php/User/DaftarGunung') ?>" class="btn btn-primary">Lihat Detail </font></a></td>
+
+          <tr>  <td><?= $key->nama_gunung?></td> </tr>
+          <tr>  <td><?= $key->lokasi?></td> </tr>
+          <tr>  <td><?= $key->tinggi?></td> </tr>
+          <tr>  <td><?= $key->status?></td> </tr>
+          <tr ><td><img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset=""></td>
+
+            <!-- <td><?= $key->gambar?></td> -->
                       </tr>
-          <?php } ?>
+<!---          <?php } ?> ------->
+
         </tbody>
         </table>
 
+<br>
+Convert pdf <br>
+<a href="<?php echo site_url('User/createPDF') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Convert PDF</a>
             </div>
 
 </html>

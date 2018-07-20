@@ -36,7 +36,7 @@
             <td><?= $key->tinggi?></td>
             <td><?= $key->status?></td>
             <td><img src="<?=base_url("assets/Gambar")."/".$key->gambar ?>" alt="" width="100px" height= "100px" srcset=""></td>
-            <td><a href="<?= base_url('index.php/User/DaftarGunung') ?>" class="btn btn-primary">Lihat Detail </font></a></td>
+            <td><a href="<?= site_url('User/DetailGunung')."/".$key->id_gunung?>" class="btn btn-primary">Lihat Detail </font></a></td>
                       </tr>
           <?php } ?>
         </tbody>

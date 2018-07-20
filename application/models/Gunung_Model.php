@@ -50,6 +50,12 @@ class Gunung_Model extends CI_Model
             }
 
         }
+        public function getGunungID($id)
+          {
+              $this->db->where('id_gunung',$id);
+              $query= $this->db->get('gunung');
+              return $query->result();
+          }
 
 
 }

@@ -35,12 +35,12 @@ class Admin extends CI_Controller
 
   }
 
-  public function DaftarUser_admin()
-  {
-    $this->load->model('Admin_Model');
-    $data['tampil'] = $this->Admin_Model->getUserAll();
-    $this->load->view('Gunung/admin/Daftar_User',$data);
-  }
+    /*    public function DaftarUser_admin()
+        {
+          $this->load->model('Admin_Model');
+          $data['tampil'] = $this->Admin_Model->getUserAll();
+          $this->load->view('Gunung/admin/Daftar_User',$data);
+        } */ 
 
   public function DataKomentar_admin()
   {
@@ -70,7 +70,7 @@ class Admin extends CI_Controller
   public function LogIn_admin()
   {
     $this->load->view('Gunung/admin/LogIn_Admin');
-    
+
 
   }
   public function cekDb()
@@ -219,6 +219,6 @@ class Admin extends CI_Controller
            }
            $data['gunung']=$this->Admin_Model->getgunungAll($id);
      }
+}
 
-
-} ?>
+?>

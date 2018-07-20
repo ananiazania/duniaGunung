@@ -14,7 +14,6 @@ class User extends CI_Controller
       $this->DaftarGunung();
     }
 
-
     public function Home_User()
     {
       $this->load->view('Gunung/user/Home');
@@ -28,7 +27,6 @@ class User extends CI_Controller
       $this->load->view('Gunung/user/DaftarGunung',$data);
 
     }
-
 
     public function Tentang()
     {
@@ -59,6 +57,25 @@ class User extends CI_Controller
   {
       $this->load->view('Gunung/user/Bantuan');
   }
+
+
+  public function Detailgunung($id)
+  {
+    $this->load->model('Gunung_Model');
+    $data['tampil'] = $this->Gunung_Model->getGunungID($id);
+    $this->load->view('Gunung/user/Detail',$data);
+  }
+
+        public function createPdf()
+        {
+        $this->load->library('pdf');
+        $this->load->model('Gunung_Model');
+        $data['tampil'] = $this->Gunung_Model->getGunung();
+        $this->pdf->load_view('Gunung/user/Hasilpdf',$data);
+        }
+
+
+
 
   public function Masuk()
   {
@@ -158,10 +175,7 @@ class User extends CI_Controller
                           $this->Usermodel->insertUser();
                           $this->load->view('Gunung/user/daftarusersukses');
                       }
-
-
             }
 
-          
 }
 ?>

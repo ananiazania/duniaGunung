@@ -33,7 +33,7 @@
           </a>
          </li>
             <li class="nav-item active">
-            <a class="nav-link" href="<?= site_url('Admin/DaftarUser_admin')  ?>">
+            <a class="nav-link" href="<?= site_url('Usertabel/')  ?>">
                <i class="fas fa-users"></i></i> Data User <span class="sr-only">(current)</span>
             </a>
            </li>
