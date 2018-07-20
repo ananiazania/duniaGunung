@@ -25,7 +25,7 @@
 <div class="alert alert-success">
 <strong> Data berhasil dihapus</strong>
 <?php
-	echo anchor('Gunung/index', 'Lihat data Gunung');
+	echo anchor('Admin/Home_admin', 'Lihat data Gunung');
   ?>
 </div>
 

@@ -39,12 +39,7 @@ class Gunung extends CI_Controller
 
 
 
-   public function delete($id)
- {
-     $this->Gunung_Model->delete($id);
-     $this->load->view('Gunung/admin/Delete_makan_sukses');
-
- }
+  
 
   public function detail($id)
   {

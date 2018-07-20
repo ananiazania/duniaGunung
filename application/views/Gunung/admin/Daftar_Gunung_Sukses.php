@@ -14,7 +14,7 @@
 
                             echo "sukses Simpan Data";
 
-                            echo anchor('Admin/TambahUser_admin', 'Masukkan Data Lagi');
+                            echo anchor('Admin/Tambah_Gunung', 'Masukkan Data Lagi');
                         ?>
 
 

@@ -61,10 +61,9 @@ class Admin extends CI_Controller
 
   public function Logout_admin()
   {
-      $this->load->view('Gunung/admin/LogIn_Admin');
       $this->session->unset_userdata('logged_in');
         $this->session->sess_destroy();
-        redirect(base_url('Admin'),'refresh');
+        redirect(base_url('index.php/Admin'),'refresh');
   }
 
   public function LogIn_admin()
@@ -156,9 +155,9 @@ class Admin extends CI_Controller
             //masuk folder gambar,type file
             $config['upload_path'] = './assets/Gambar/';
             $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size']  = 8000000;
-            $config['max_width']  = 1024;
-            $config['max_height']  = 768;
+            $config['max_size']  = 100000000000000000000000000;
+            $config['max_width']  = 1024000000000000000000000000;
+            $config['max_height']  = 7680000000000000000000000000;
 
     	       $this->load->library('upload',$config);
              if ( ! $this->upload->do_upload('userfile'))
@@ -176,7 +175,7 @@ class Admin extends CI_Controller
         }
     }
 
-     public function Update($id)
+     public function Update_User($id)
      {
        $this->form_validation->set_rules('username','Username','trim|required');
        $this->form_validation->set_rules('jeniskelamin','JenisKelamin','trim|required');
@@ -186,18 +185,23 @@ class Admin extends CI_Controller
        $this->form_validation->set_rules('level','Level','trim|required');
        $this->load->model('Admin_Model');
 
-         if ( ! $this->upload->do_upload())
+       $data['UpdateUser']= $this->Admin_Model->getUpdateUser($id);
+       
+
+       if($this->form_validation->run()==FALSE)
           {
-              $error = array('error' => $this->upload->display_errors());
-              $this->load->view('Gunung/Admin/Tambah_User', $error);
+            $this->load->view('Gunung/Admin/Update_User',$data);
           }
-         else
-           {
-             $this->Admin_Model->Updateuser($id);
-             $this->load->view('Makan/');
-           }
-           $data['tbuser']=$this->Admin_Model->getUserAll($id);
+          else
+          {
+              $this->Admin_Model->updateuser($id);
+              $this->load->view('Gunung/admin/Daftar_User_Sukses');
+          }
+       
+
      }
+
+
 
      public function UpdateGunungadmin($id)
      {
@@ -207,18 +211,48 @@ class Admin extends CI_Controller
        $this->form_validation->set_rules('status','Status','trim|required');
        $this->load->model('Admin_Model');
 
-         if ( ! $this->upload->do_upload(userfile))
-          {
-              $error = array('error' => $this->upload->display_errors());
-              $this->load->view('Gunung/Admin/Update_Gunung', $error);
-          }
-         else
-           {
-             $this->Admin_Model->updategunung($id);
-             $this->load->view('Gunung/admin/Home');
-           }
-           $data['gunung']=$this->Admin_Model->getgunungAll($id);
-     }
-}
+
+       $data['UpdateGunung']= $this->Admin_Model->getUpdateGunung($id);
+
+        if($this->form_validation->run()==FALSE)
+        {
+          $this->load->view('Gunung/Admin/Update_gunung',$data);
+        }
+        else
+        {
+          $config['upload_path'] = './assets/Gambar/';
+          $config['allowed_types'] = 'gif|jpg|png';
+          $config['max_size']         = '1000000000';
+          $config['max_width']        = '10240';
+          $config['max_height']       = '6780';
+
+            $this->load->library('upload', $config) ;
+            if ( ! $this->upload->do_upload('userfile'))
+              {
+                // echo $this->upload->display_errors();
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('Gunung/admin/Daftar_Gunung_View',$error);
+                //print_r($error);
+              }
+            else
+              {
+                $this->Admin_Model->updategunung($id);
+                $this->load->view('Gunung/admin/Update_Gunung_Sukses');
+              }
+        }
+      }
+
+  public function deleteUser($id)
+  {
+     $this->Admin_Model->deleteUser($id);
+      $this->load->view('Gunung/admin/Delete_User_Sukses');
+    }
+
+    public function deleteGunung($id)
+    {
+       $this->Admin_Model->deleteGunung($id);
+        $this->load->view('Gunung/admin/Delete_Gunung_Sukses');
+      }
+
 
 ?>

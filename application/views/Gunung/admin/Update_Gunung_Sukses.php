@@ -25,7 +25,7 @@
 <div class="alert alert-success">
 <strong> Data berhasil di Update</strong>
 <?php
-	echo anchor('Gunung/index', 'lihat data Gunung');
+	echo anchor('Admin/Home_admin', 'lihat data Gunung');
   ?>
 </div>
 
