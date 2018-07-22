@@ -30,7 +30,7 @@
           </a>
          </li>
             <li class="nav-item active">
-            <a class="nav-link" href="<?= site_url('User/Profile_user')  ?>">
+            <a class="nav-link" href="<?= site_url('User/Profile_user') ?>">
                <i class="fas fa-users"></i></i> Profil Saya <span class="sr-only">(current)</span>
             </a>
            </li>
@@ -42,8 +42,8 @@
         </ul>
           <form class="form-inline mt-2 mt-md-0">
             <!-- nama cont/function -->
-            <a href="<?php echo site_url('User/Profile') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
-            <a  href="<?= site_url('Admin/Logout_admin') ?>"  class="btn  btn-success my-2 my-sm-0 ml-2">Log Out</a>
+            
+            <a  href="<?= site_url('Admin/Logout_admin') ?>"><i class="fas fa-sign-out-alt"></i></i> Log Out <span class="sr-only">(current)</span></a>
           </form>
     </div>
   </nav>

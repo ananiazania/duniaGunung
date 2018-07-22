@@ -61,6 +61,10 @@ Convert pdf <br>
 <a href="<?php echo site_url('User/createPDF') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Convert PDF</a>
 
 <br>
+<br>
+
+  <input type="button" value="Kembali" onclick="history.back(-1)" />
+
         </div>
 
 </html>
