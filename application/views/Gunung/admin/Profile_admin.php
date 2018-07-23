@@ -10,6 +10,9 @@
                 </div>
                 <div class="col-md-6 justify-content-md-center">
                     <div>
+                    <h4 class="card-title">Selamat Datang <?= $this->session->userdata('logged_in')['username']; ?></h4>
+                        <h5>
+                        </
                       Selamat datang admin "manggil nama admin dr db"
                     </div>
                     </form>

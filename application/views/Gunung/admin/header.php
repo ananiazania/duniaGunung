@@ -38,15 +38,15 @@
             </a>
            </li>
 
-          <li class="nav-item active">
+          <!-- <li class="nav-item active">
           <a class="nav-link" href="<?= site_url('Admin/DataKomentar_admin') ?>">
              <i class="fas fa-comments"></i> Data Komentar <span class="sr-only">(current)</span>
           </a>
-         </li>
+         </li> -->
         </ul>
           <form class="form-inline mt-2 mt-md-0">
             <!-- nama cont/function -->
-            <a href="<?php echo site_url('Admin/Profile_admin') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a>
+            <!-- <a href="<?php echo site_url('Admin/Profile_admin') ?>" class="btn btn-secondary my-2 my-sm-0 ml-2">Profile</a> -->
             <a  href="<?= site_url('Admin/Logout_admin') ?>"  class="btn  btn-success my-2 my-sm-0 ml-2">Log Out</a>
           </form>
     </div>

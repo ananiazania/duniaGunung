@@ -51,6 +51,8 @@ class Admin extends CI_Controller
 
   public function Profile_admin()
   {
+    $this->load->model('Admin_Model');
+    $this->Admin_Model->getKomentar();
       $this->load->view('Gunung/admin/Profile_admin');
   }
 
