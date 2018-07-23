@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <h1 class="white">
-                        Hallo Admin <br>
-                        Apakah Ada data gunung baru di indonesia? :)
+                        Hallo !!! <br>
+                        Selamat Datang di Web Dunia Gunung :)
                     </h1>
                 </div>
                 <div class="col-md-6 justify-content-md-center">
