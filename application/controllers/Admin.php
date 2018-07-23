@@ -40,7 +40,7 @@ class Admin extends CI_Controller
           $this->load->model('Admin_Model');
           $data['tampil'] = $this->Admin_Model->getUserAll();
           $this->load->view('Gunung/admin/Daftar_User',$data);
-        } 
+        }
 
   public function DataKomentar_admin()
   {
@@ -186,7 +186,7 @@ class Admin extends CI_Controller
        $this->load->model('Admin_Model');
 
        $data['UpdateUser']= $this->Admin_Model->getUpdateUser($id);
-       
+
 
        if($this->form_validation->run()==FALSE)
           {
@@ -197,7 +197,7 @@ class Admin extends CI_Controller
               $this->Admin_Model->updateuser($id);
               $this->load->view('Gunung/admin/Daftar_User_Sukses');
           }
-       
+
 
      }
 

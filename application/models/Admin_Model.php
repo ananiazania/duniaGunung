@@ -15,7 +15,7 @@ class Admin_Model extends CI_Model
         }
 
       public function login($username,$password)
-        {
+        { 
             $this->db->select('*');
             $this->db->from('tbuser');
             $this->db->where('username',$username);
